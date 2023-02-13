@@ -1,0 +1,37 @@
+#snare two times
+2.times do
+  sample :drum_snare_soft
+  sleep 2
+end
+
+#kick four times
+4.times do
+  sample :drum_heavy_kick
+  sleep 1
+end
+
+#cymbal eight times
+8.times do
+  sample :drum_cymbal_closed
+  sleep 0.5
+end
+
+#ALL TOGETHER NOW
+sample :drum_splash_hard, sustain: 3
+sample :drum_cymbal_hard
+sample :drum_cowbell, amp: 1.5
+
+live_loop :soft do
+  sample :drum_snare_soft, amp: 4
+  sleep 2
+end
+
+live_loop :kick do
+  sample :drum_heavy_kick, amp: 2
+  sleep 1
+end
+
+live_loop :cymbal do
+  sample :drum_cymbal_closed
+  sleep 0.5
+end
